@@ -226,9 +226,10 @@ window.raf = (function(){
     }
     var slotTrigger = document.querySelector("#slot-trigger");
     if (slotTrigger) {
-      slotTrigger.addEventListener("click",function(e){
+      slotTrigger.addEventListener("keypress",function(e){
+        if (e.key === 'Enter') {
         this.addClass('slot-triggerDown');
-      })
+      }})
     }
   }
   window[NAME]= SlotMachine;
