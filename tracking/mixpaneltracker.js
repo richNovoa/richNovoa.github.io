@@ -50,9 +50,9 @@ let x = 1;
   });
 
 /* Track links Tracker */
-// function to generate href
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
+<<<<<<< HEAD
 };
 //mixpanel conditional event tracker
 mixpanel.track_links('a','Click on Link', getLinkData);
@@ -66,5 +66,13 @@ var getAudioData = function(ele) {
   
 }
 mixpanel.track_links('audio', 'Play Audio', getAudioData);
+=======
+}
+mixpanel.track_links('a','Click on Link', getLinkData);
+
+  
+
+
+>>>>>>> parent of 25f1513 (audio tracking)
 
 */
