@@ -46,10 +46,12 @@ mixpanel library with project tracker and
 
 // Track links Tracker 
 
-    var getLinkData = function(ele) {
-      return { type: $(ele).attr('type')}}
-      
+    let getLinkData = function(ele) { 
+      return { type: $(ele).attr('type') } 
+}
+
     mixpanel.track_links('a','Click on Link', getLinkData);
+    mixpanel.track_links('input', 'Link clicked', getLinkData);
 
 
  
