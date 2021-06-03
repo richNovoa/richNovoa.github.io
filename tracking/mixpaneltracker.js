@@ -8,17 +8,14 @@ mixpanel library with project tracker and
 */
 
 /* EU data residency */
-mixpanel.init(
-  "573e17d0f29211c792ffe59d1ba4ef38",
-  {
+mixpanel.init("573e17d0f29211c792ffe59d1ba4ef38",{
     api_host: "https://api-eu.mixpanel.com",
-  },
-);
+  });
 
 /* Session Duration Tracker */
 
 //Timestamp Session Duration Start
-  mixpanel.time_event("Session Duration")
+  mixpanel.time_event("Session Duration");
 //sendBeacon Session Duration End
 window.addEventListener(`unload`, function() {
   mixpanel.set_config({api_transport: 'sendBeacon'});
@@ -58,7 +55,7 @@ var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
 };
 //mixpanel conditional event tracker
-mixpanel.track_links('a','Click on Link', getLinkData)
+mixpanel.track_links('a','Click on Link', getLinkData);
 
 /* WIP  
 
