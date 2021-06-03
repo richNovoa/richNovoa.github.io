@@ -22,9 +22,7 @@ mixpanel.init(
 //sendBeacon Session Duration End
 window.addEventListener(`unload`, function() {
   mixpanel.set_config({api_transport: 'sendBeacon'});
-  mixpanel.track('Session Duration', {
-    'store': locationID,
-  });
+  mixpanel.track('Session Duration');
   mixpanel.people.set({foo: 'bar'});
 });
 
