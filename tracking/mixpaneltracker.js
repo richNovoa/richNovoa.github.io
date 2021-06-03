@@ -30,7 +30,7 @@ window.addEventListener(`unload`, function() {
 /* Time On Page Tracker */
 
 //Timestamp Time on Page
-  mixpanel.time_event("Time on Page")
+  mixpanel.time_event("Time on Page");
 let x = 1;
 //Time on Page eventListener
   document.addEventListener(`visibilitychange`, function() {
@@ -56,11 +56,9 @@ let x = 1;
 // function to generate href
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
-}
+};
 //mixpanel conditional event tracker
-  mixpanel.track_links('a','Click on Link', getLinkData);
-}
-
+mixpanel.track_links('a','Click on Link', getLinkData)
 
 /* WIP  
 
@@ -73,11 +71,3 @@ var getAudioData = function(ele) {
 mixpanel.track_links('audio', 'Play Audio', getAudioData);
 
 */
-
-
-
-
-  
-
-
-
