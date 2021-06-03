@@ -49,11 +49,21 @@ let x = 1;
   });
 
 /* Track links Tracker */
+// function to generate href
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
 }
+//mixpanel event tracker
 mixpanel.track_links('a','Click on Link', getLinkData);
 
+
+/* Audio Tracks */
+//function to generate audio href
+var getAudioData = function(ele) {
+  return { type: $(ele).attr('type')}
+}
+// mixpanel event tracker
+mixpanel.track_links('audio', 'Play Audio', getAudioData);
   
 
 
