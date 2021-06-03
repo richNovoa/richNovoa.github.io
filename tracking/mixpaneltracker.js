@@ -55,20 +55,31 @@ let x = 1;
   });
 
 /* Track links Tracker */
-
 // function to generate href
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
-};
-//function to generate audio href
-var getAudioData = document.getElementById('audio').src;
-
+}
 //mixpanel conditional event tracker
-if (getLinkData === 'javascript:void(0)') {
-  mixpanel.track_links('audio', 'Play Audio', getAudioData);
-} else {
   mixpanel.track_links('a','Click on Link', getLinkData);
-};
+}
+
+
+/* WIP  
+
+Audio Tracking 
+//function to generate audio href
+var getAudioData = function(ele) {
+  return { type: $(ele).attr('type')}
+  
+}
+mixpanel.track_links('audio', 'Play Audio', getAudioData);
+
+*/
+
+
+
+
+  
 
 
 
