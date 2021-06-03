@@ -5,24 +5,26 @@ To implement add the following code to the header of the website:
 mixpanel library with project tracker and
 
 <script src="http://linktothisfile"></style>
- Session Duration Tracker */
+*/
 
-//Timestamp Session Duration Start
+//Session Duration Tracker
+
+  //Start
   mixpanel.time_event("Session Duration");
-//sendBeacon Session Duration End
-window.addEventListener(`unload`, function() {
-  mixpanel.set_config({api_transport: 'sendBeacon'});
-  mixpanel.track('Session Duration');
-  mixpanel.people.set({foo: 'bar'});
+  //End
+  window.addEventListener(`unload`, function() {
+    mixpanel.set_config({api_transport: 'sendBeacon'});
+    mixpanel.track('Session Duration');
+    mixpanel.people.set({foo: 'bar'});
 });
 
 
 //Time On Page Tracker
 
-//Timestamp Time on Page
+  //Start
   mixpanel.time_event("Time on Page");
-let x = 1;
-//Time on Page eventListener
+  let x = 1;
+  //End
   document.addEventListener(`visibilitychange`, function() {
     if (document.visibilityState === 'hidden') {  
         mixpanel.set_config({api_transport: 'sendBeacon'});
@@ -43,9 +45,11 @@ let x = 1;
   });
 
 // Track links Tracker 
-var getLinkData = function(ele) {
-  return { type: $(ele).attr('type')}
-};
-  mixpanel.track_links('a','Click on Link', getLinkData); 
+
+    var getLinkData = function(ele) {
+      return { type: $(ele).attr('type')}}
+      
+    mixpanel.track_links('a','Click on Link', getLinkData);
+
 
  
