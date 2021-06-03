@@ -5,14 +5,7 @@ To implement add the following code to the header of the website:
 mixpanel library with project tracker and
 
 <script src="http://linktothisfile"></style>
-*/
-
-/* EU data residency */
-mixpanel.init("573e17d0f29211c792ffe59d1ba4ef38",{
-    api_host: "https://api-eu.mixpanel.com",
-  });
-
-/* Session Duration Tracker */
+ Session Duration Tracker */
 
 //Timestamp Session Duration Start
   mixpanel.time_event("Session Duration");
@@ -24,7 +17,7 @@ window.addEventListener(`unload`, function() {
 });
 
 
-/* Time On Page Tracker */
+//Time On Page Tracker
 
 //Timestamp Time on Page
   mixpanel.time_event("Time on Page");
@@ -49,16 +42,8 @@ let x = 1;
     }
   });
 
-/* Track links Tracker */
+// Track links Tracker 
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
-}
-mixpanel.track_links('a','Click on Link', getLinkData);
-
-<<<<<<< HEAD
-=======
-  
-
-
->>>>>>> parent of 25f1513 (audio tracking)
-
+};
+  mixpanel.track_links('a','Click on Link', getLinkData); 
