@@ -1,14 +1,33 @@
+/* This is a library of trackers for our mixpanel implementation
+this code can be reused in other websites.
+To implement add the following code to the header of the website:
 
+mixpanel library with project tracker and
+
+<script src="http://linktothisfile"></style>
+*/
+
+
+
+/* Session Duration Tracker */
 
 //Timestamp Session Duration Start
   mixpanel.time_event("Session Duration")
+//sendBeacon Session Duration End
+window.addEventListener(`unload`, function() {
+  mixpanel.set_config({api_transport: 'sendBeacon'});
+  mixpanel.track('Session Duration', {
+    'locationID': locationID,
+  });
+  mixpanel.people.set({foo: 'bar'});
+});
+
+
+/* Time On Page Tracker */
 
 //Timestamp Time on Page
   mixpanel.time_event("Time on Page")
-
-
 let x = 1;
-
 //Time on Page eventListener
   document.addEventListener(`visibilitychange`, function() {
     if (document.visibilityState === 'hidden') {  
@@ -28,10 +47,11 @@ let x = 1;
         mixpanel.time_event("Time on Page")
     }
   });
-  
-//sendBeacon Session Duration End
-  window.addEventListener(`unload`, function() {
-    mixpanel.set_config({api_transport: 'sendBeacon'});
-    mixpanel.track('Session Duration');
-    mixpanel.people.set({foo: 'bar'});
-  });
+
+
+  /* URL Tracker */ 
+let path = location.pathname.split(/= + &/);
+let locationID = path[1];
+
+
+
