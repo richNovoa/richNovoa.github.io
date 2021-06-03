@@ -10,14 +10,16 @@ mixpanel library with project tracker and
 
 
 /* Session Duration Tracker */
-
+//URL Tracker
+let path = location.pathname.split(/= + &/);
+let locationID = path[1];
 //Timestamp Session Duration Start
   mixpanel.time_event("Session Duration")
 //sendBeacon Session Duration End
 window.addEventListener(`unload`, function() {
   mixpanel.set_config({api_transport: 'sendBeacon'});
   mixpanel.track('Session Duration', {
-    'locationID': locationID,
+    'store': locationID,
   });
   mixpanel.people.set({foo: 'bar'});
 });
@@ -49,9 +51,7 @@ let x = 1;
   });
 
 
-  /* URL Tracker */ 
-let path = location.pathname.split(/= + &/);
-let locationID = path[1];
+  
 
 
 
