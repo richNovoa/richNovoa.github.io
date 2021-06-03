@@ -7,7 +7,13 @@ mixpanel library with project tracker and
 <script src="http://linktothisfile"></style>
 */
 
-
+/* EU data residency */
+mixpanel.init(
+  "573e17d0f29211c792ffe59d1ba4ef38",
+  {
+    api_host: "https://api-eu.mixpanel.com",
+  },
+);
 
 /* Session Duration Tracker */
 
@@ -49,22 +55,20 @@ let x = 1;
   });
 
 /* Track links Tracker */
+
 // function to generate href
 var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
-}
-//mixpanel event tracker
-mixpanel.track_links('a','Click on Link', getLinkData);
-
-
-/* Audio Tracks */
+};
 //function to generate audio href
-var getAudioData = function(ele) {
-  return { type: $(ele).attr('type')}
-}
-// mixpanel event tracker
-mixpanel.track_links('audio', 'Play Audio', getAudioData);
-  
+var getAudioData = document.getElementById('audio').src;
+
+//mixpanel conditional event tracker
+if (getLinkData === 'javascript:void(0)') {
+  mixpanel.track_links('audio', 'Play Audio', getAudioData);
+} else {
+  mixpanel.track_links('a','Click on Link', getLinkData);
+};
 
 
 
