@@ -47,3 +47,5 @@ var getLinkData = function(ele) {
   return { type: $(ele).attr('type')}
 };
   mixpanel.track_links('a','Click on Link', getLinkData); 
+
+ 
