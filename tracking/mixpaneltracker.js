@@ -12,7 +12,7 @@ mixpanel library with project tracker and
 /* Session Duration Tracker */
 //URL Tracker
 const parsedUrl = new URL(window.location.href);
-let locationID = parsedUrl.searchParams.get("id")); 
+let locationID = parsedUrl.searchParams.get("id"); 
 //Timestamp Session Duration Start
   mixpanel.time_event("Session Duration")
 //sendBeacon Session Duration End
