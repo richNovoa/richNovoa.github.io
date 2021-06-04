@@ -78,7 +78,7 @@ mixpanel library with project tracker and
             // current bucket hasn't been already sent to GA?, let's push it to GTM
             if (videos_status[e.target.id].greatest_marker && !videos_status[e.target.id]._progress_markers[videos_status[e.target.id].greatest_marker]) {
                 videos_status[e.target.id]._progress_markers[videos_status[e.target.id].greatest_marker] = true;
-                dataLayer.push({
+                mixpanel.track('% Played', {
                     'event': 'audio',
                     'eventCategory': 'HTML5 Audio',
                     'eventAction': videos_status[e.target.id].greatest_marker + '%',
