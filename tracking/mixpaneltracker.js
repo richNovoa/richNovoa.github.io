@@ -153,5 +153,5 @@ mixpanel library with project tracker and
         videos[i].addEventListener("timeupdate", eventHandler, false);
         videos[i].addEventListener("ended", eventHandler, false);
     }
-})();
+});
  
